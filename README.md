@@ -43,11 +43,14 @@ Sorter {
   }
 }
 ```
-
+### Component
 `Sorter { ... }` declares a component called `Sorter`.
 
+### Interface
 `interface { ... }` declares the interface of the `Sorter` component. Inside it we define a function signature `sort(List<Int>) -> List<Int>`. This says: "Sorter has a function sort that takes a list of integers and returns a list of integers."
 
+### Constraints
 `constraints { ... }` declares the constraints on the `Sorter` component. Inside it we define one constraint per line.
 
+### Tests
 `tests { ... }` declares explicit tests that must pass for `Sorter` to be considered properly implemented.
