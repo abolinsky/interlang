@@ -18,7 +18,7 @@ It is a compiled language with no variables. The programmer architects a program
     - Programmers describe:
         - What modules/functions must do (interfaces).
         - Under what conditions (constraints).
-    - There is no manual implementation unless desired.
+    - There is no default manual implementation unless explicitly defined.
     - The compiler (backed by an LLM) figures out how to implement them.
 4. LLM-Powered Compilation:
     - The compiler uses a plug-and-play LLM backend (e.g., GPT, Claude, Gemini, open-source models).
