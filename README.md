@@ -24,3 +24,30 @@ It is a compiled language with no variables. The programmer architects a program
     - The compiler uses a plug-and-play LLM backend (e.g., GPT, Claude, Gemini, open-source models).
     - Different models can be swapped without changing source code.
     - LLM acts like a code generator, fulfilling interface+constraint specifications.
+
+## Possible program structure
+```
+Sorter {
+  interface {
+    sort(List<Int>) -> List<Int>
+  }
+
+  constraints {
+    sort([3, 1, 2]) == [1, 2, 3]
+    sort([]) == []
+    forall l: List<Int> => isSorted(sort(l))
+  }
+
+  tests {
+    assert sort([5, 4, 3]) == [3, 4, 5]
+  }
+}
+```
+
+`Sorter { ... }` declares a component called `Sorter`.
+
+`interface { ... }` declares the interface of the `Sorter` component. Inside it we define a function signature `sort(List<Int>) -> List<Int>`. This says: "Sorter has a function sort that takes a list of integers and returns a list of integers."
+
+`constraints { ... }` declares the constraints on the `Sorter` component. Inside it we define one constraint per line.
+
+`tests { ... }` declares explicit tests that must pass for `Sorter` to be considered properly implemented.
